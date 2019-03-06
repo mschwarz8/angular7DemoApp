@@ -1,0 +1,26 @@
+<body>
+<h1>Upload Document</h1>
+
+<form *ngIf="!success" [formGroup]="documentForm" (ngSubmit)="onSubmit()">
+
+  <h5 *ngIf="success">File has been successfully uploaded! (Currently nothing happens obviously)</h5>
+
+  <label>
+    File Name:
+    <input type="text" placeholder="Filename to be uploaded" formControlName="fileName">
+    <div *ngIf="submitted && documentForm.controls.fileName.errors" class="error">
+      <div *ngIf="documentForm.controls.fileName.errors.required">
+        File name is required!
+      </div>
+    </div>
+  </label>
+
+  <input type="submit" value="Upload Document" class="cta">
+
+</form>
+
+<div *ngIf="submitted" class="results">
+  <strong>Uploaded file:  (Currently nothing happens obviously)</strong>
+  <span>{{ documentForm.controls.fileName.value }}</span>
+</div>
+</body>

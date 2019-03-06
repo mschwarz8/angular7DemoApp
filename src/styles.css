@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+body, html {
+  height: 100%;
+  margin: 0 auto;
+}
+
+body {
+  font-family: "Montserrat";
+  font-size: 18px;
+  background-color: #FF0500;
+}
+body #bg {
+  clip-path: polygon(50% 0, 100% 0, 100% 71%, 58% 100%, 0 100%, 0 0);
+  background-color: #FFFBFF;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0;
+  z-index: -1;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 1.3em;
+  display: grid;
+  grid-template-columns: 30% auto;
+}
+.container a {
+  color: #FFFBFF;
+}
+
+section {
+  margin: 0 auto;
+  padding: 1.3em;
+  background-color: #FFFBFF;
+}
+
+/*# sourceMappingURL=styles.css.map */

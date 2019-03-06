@@ -1,0 +1,44 @@
+<body>
+<h1>Search Document</h1>
+
+<form *ngIf="!success" [formGroup]="documentForm" (ngSubmit)="onSubmit()">
+
+  <h5 *ngIf="success">File has been found! (Currently nothing happens obviously)</h5>
+
+  <label>
+    First name:
+    <input (blur)="updateDocument()" type="text" placeholder="First name of person" formControlName="firstName">
+    <div *ngIf="submitted && documentForm.controls.firstName.errors" class="error">
+      <div *ngIf="documentForm.controls.firstName.errors.required">
+        First name is required!
+      </div>
+    </div>
+  </label>
+
+  <label>
+    Last name:
+    <input (blur)="updateDocument()" type="text" placeholder="Last name of person" formControlName="lastName">
+    <div *ngIf="submitted && documentForm.controls.lastName.errors" class="error">
+      <div *ngIf="documentForm.controls.lastName.errors.required">
+        Last name is required!
+      </div>
+    </div>
+  </label>
+
+  <input type="submit" value="Search Document" class="cta">
+
+</form>
+
+<div *ngIf="success" class="results">
+  <strong>File name: (Currently nothing happens obviously)</strong>
+  <span>{{ documentForm.get('firstName').value }} {{ documentForm.get('lastName').value }}</span>
+  <ul *ngIf="resultDocumentList">
+    <app-template-document [documentInterface]="resultDocument" *ngFor="let resultDocument of resultDocumentList"></app-template-document>
+    <!--
+    <li *ngFor="let document of resultDocumentList">
+      {{ document.id }} + {{ document.firstName }} + {{ document.lastName }} + {{ document.openClaim }}
+    </li>
+    -->
+  </ul>
+</div>
+</body>
