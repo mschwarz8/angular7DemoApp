@@ -30,4 +30,8 @@ export class UploadComponent implements OnInit {
   ngOnInit() {
   }
 
+  inputFieldChanges() {
+    this.submitted = false;
+  }
+
 }

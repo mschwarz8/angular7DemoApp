@@ -7,7 +7,7 @@
 
   <label>
     First name:
-    <input (blur)="updateDocument()" type="text" placeholder="First name of person" formControlName="firstName">
+    <input (blur)="updateDocument()" type="text" placeholder="First name of person" (ngModelChange)="inputFieldChanges()" formControlName="firstName">
     <div *ngIf="submitted && documentForm.controls.firstName.errors" class="error">
       <div *ngIf="documentForm.controls.firstName.errors.required">
         First name is required!
@@ -17,7 +17,7 @@
 
   <label>
     Last name:
-    <input (blur)="updateDocument()" type="text" placeholder="Last name of person" formControlName="lastName">
+    <input (blur)="updateDocument()" type="text" placeholder="Last name of person" (ngModelChange)="inputFieldChanges()" formControlName="lastName">
     <div *ngIf="submitted && documentForm.controls.lastName.errors" class="error">
       <div *ngIf="documentForm.controls.lastName.errors.required">
         Last name is required!

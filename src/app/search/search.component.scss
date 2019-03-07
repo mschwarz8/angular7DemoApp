@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
-@import "~src/sass/variables";
+@import "../../../src/sass/variables";
 
 body, html {
   height: 100%;
   width: 100%;
   margin: 0 auto;
 
-  background-color: color(secondary);
+  background-color: transparent;
 }
 
 label {
@@ -17,6 +17,7 @@ label {
     width: 50%;
     margin-bottom: 20px;
     padding: 1em;
+    border-radius: 5px;
   }
 
   .error {

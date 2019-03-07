@@ -7,7 +7,7 @@
 
   <label>
     File Name:
-    <input type="text" placeholder="Filename to be uploaded" formControlName="fileName">
+    <input type="text" placeholder="Filename to be uploaded" (ngModelChange)="inputFieldChanges()" formControlName="fileName">
     <div *ngIf="submitted && documentForm.controls.fileName.errors" class="error">
       <div *ngIf="documentForm.controls.fileName.errors.required">
         File name is required!

@@ -34,10 +34,11 @@ export class SearchComponent implements OnInit {
   }
 
   onSubmit() {
+    this.submitted = true;
+
     if (this.documentForm.invalid) {
       return;
     }
-    this.submitted = true;
     console.log('Sending search request with JSON: ' + JSON.stringify(this.document));
 
     this.resultDocumentList = this.data.getDocuments().documents;
@@ -63,6 +64,10 @@ export class SearchComponent implements OnInit {
       url: this.document.url
     };
     console.log('Document updated after blur to ' + JSON.stringify(this.document));
+  }
+
+  inputFieldChanges() {
+    this.submitted = false;
   }
 
 }

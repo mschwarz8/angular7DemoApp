@@ -1,7 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TemplateDocumentComponent } from './template-document.component';
-import { Document } from '../../interfaces/document';
 
 describe('TemplateDocumentComponent', () => {
   let component: TemplateDocumentComponent;
@@ -10,8 +9,7 @@ describe('TemplateDocumentComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        TemplateDocumentComponent,
-        Document
+        TemplateDocumentComponent
       ]
     })
     .compileComponents();

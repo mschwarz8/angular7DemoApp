@@ -2,16 +2,33 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SearchComponent } from './search.component';
 import { TemplateDocumentComponent } from '../template/template-document/template-document.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { DataService } from '../services/data.service';
 
 describe('SearchComponent', () => {
   let component: SearchComponent;
   let fixture: ComponentFixture<SearchComponent>;
 
+  let dataServiceMock: jasmine.SpyObj<DataService>;
+
   beforeEach(async(() => {
+
+    dataServiceMock = jasmine.createSpyObj('DataService', ['getDocuments'])
+    dataServiceMock.getDocuments.and.returnValue([])
+
     TestBed.configureTestingModule({
+      imports: [
+        ReactiveFormsModule
+      ],
       declarations: [
         SearchComponent,
         TemplateDocumentComponent
+      ],
+      providers: [
+        {
+          provide: DataService,
+          useValue: dataServiceMock,
+        }
       ]
     })
       .compileComponents();
